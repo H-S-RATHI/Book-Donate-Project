@@ -84,6 +84,9 @@ function add_row() {
     "' class='delete' onclick='delete_row(" +
     table_len +
     ")'>Delete</button></td></tr>");
+
+  // focus on the book title input field
+  document.getElementById("new_title" + table_len).focus();
 }
 
 function delete_row(no) {
