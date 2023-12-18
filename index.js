@@ -30,6 +30,23 @@ function edit_row(no) {
     "<input type='text' id='isbn_text" + no + "' value='" + isbn_data + "'>";
 }
 
+function save_row(no) {
+  var title_val = document.getElementById("title_text" + no).value;
+  var author_val = document.getElementById("author_text" + no).value;
+  var genre_val = document.getElementById("genre_text" + no).value;
+  var year_val = document.getElementById("year_text" + no).value;
+  var isbn_val = document.getElementById("isbn_text" + no).value;
+
+  document.getElementById("title_row" + no).innerHTML = title_val;
+  document.getElementById("author_row" + no).innerHTML = author_val;
+  document.getElementById("genre_row" + no).innerHTML = genre_val;
+  document.getElementById("year_row" + no).innerHTML = year_val;
+  document.getElementById("isbn_row" + no).innerHTML = isbn_val;
+
+  document.getElementById("edit_button" + no).style.display = "block";
+  document.getElementById("save_button" + no).style.display = "none";
+}
+
 function add_row() {
   var table = document.getElementById("data_table");
   var table_len = table.rows.length;
@@ -67,61 +84,6 @@ function add_row() {
     "' class='delete' onclick='delete_row(" +
     table_len +
     ")'>Delete</button></td></tr>");
-}
-
-function save_row(no) {
-  var title_val = document.getElementById("new_title" + no).value;
-  var author_val = document.getElementById("new_author" + no).value;
-  var genre_val = document.getElementById("new_genre" + no).value;
-  var year_val = document.getElementById("new_year" + no).value;
-  var isbn_val = document.getElementById("new_isbn" + no).value;
-
-  document.getElementById("row" + no).innerHTML =
-    "<td id='serial_no_row" +
-    no +
-    "'>" +
-    no +
-    "</td>" +
-    "<td id='title_row" +
-    no +
-    "'>" +
-    title_val +
-    "</td>" +
-    "<td id='author_row" +
-    no +
-    "'>" +
-    author_val +
-    "</td>" +
-    "<td id='genre_row" +
-    no +
-    "'>" +
-    genre_val +
-    "</td>" +
-    "<td id='year_row" +
-    no +
-    "'>" +
-    year_val +
-    "</td>" +
-    "<td id='isbn_row" +
-    no +
-    "'>" +
-    isbn_val +
-    "</td>" +
-    "<td><button id='edit_button" +
-    no +
-    "' class='edit' onclick='edit_row(" +
-    no +
-    ")'>Edit</button>" +
-    "<button id='save_button" +
-    no +
-    "' class='save' onclick='save_row(" +
-    no +
-    ")' style='display:none'>Save</button>" +
-    "<button id='delete_button" +
-    no +
-    "' class='delete' onclick='delete_row(" +
-    no +
-    ")'>Delete</button></td>";
 }
 
 function delete_row(no) {
