@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="wrapper">
+      <button
+        type="button"
+        class="add"
+        onclick="add_row()"
+        aria-label="Add new row"
+      >
+        Add Row
+      </button>
+
+      <table
+        id="data_table"
+        cellspacing="2"
+        cellpadding="5"
+        border="1"
+        role="table"
+      >
+        <tr>
+          <th scope="col">Serial No.</th>
+          <th scope="col">Name</th>
+          <th scope="col">Country</th>
+          <th scope="col">Age</th>
+          <th scope="col">Actions</th>
+        </tr>
+        <!-- Sample Row -->
+        <tr id="row1">
+          <td id="serial_no_row1">1</td>
+          <td id="name_row1">Sahara</td>
+          <td id="country_row1">India</td>
+          <td id="age_row1">22</td>
+          <td>
+            <button
+              id="edit_button1"
+              class="edit"
+              aria-label="Edit row 1"
+              onclick="edit_row('1')"
+            >
+              Edit
+            </button>
+            <button
+              id="save_button1"
+              class="save"
+              aria-label="Save row 1"
+              onclick="save_row('1')"
+              style="display: none"
+            >
+              Save
+            </button>
+            <button
+              id="delete_button1"
+              class="delete"
+              aria-label="Delete row 1"
+              onclick="delete_row('1')"
+            >
+              Delete
+            </button>
+          </td>
+        </tr>
+      </table>
+    </div>
+    <script src="index.js"></script>
+  </body>
+</html>
