@@ -2,31 +2,32 @@ function edit_row(no) {
   document.getElementById("edit_button" + no).style.display = "none";
   document.getElementById("save_button" + no).style.display = "block";
 
-  var name = document.getElementById("name_row" + no);
-  var country = document.getElementById("country_row" + no);
-  var age = document.getElementById("age_row" + no);
+  var title = document.getElementById("title_row" + no);
+  var author = document.getElementById("author_row" + no);
+  var genre = document.getElementById("genre_row" + no);
+  var year = document.getElementById("year_row" + no);
+  var isbn = document.getElementById("isbn_row" + no);
 
-  var name_data = name.innerHTML;
-  var country_data = country.innerHTML;
-  var age_data = age.innerHTML;
+  var title_data = title.innerHTML;
+  var author_data = author.innerHTML;
+  var genre_data = genre.innerHTML;
+  var year_data = year.innerHTML;
+  var isbn_data = isbn.innerHTML;
 
-  name.innerHTML =
-    "<input type='text' id='name_text" + no + "' value='" + name_data + "'>";
-  country.innerHTML =
-    "<input type='text' id='country_text" +
+  title.innerHTML =
+    "<input type='text' id='title_text" + no + "' value='" + title_data + "'>";
+  author.innerHTML =
+    "<input type='text' id='author_text" +
     no +
     "' value='" +
-    country_data +
+    author_data +
     "'>";
-  age.innerHTML =
-    "<input type='text' id='age_text" + no + "' value='" + age_data + "'>";
-
-  document
-    .querySelector(`#edit_button${no}`)
-    .setAttribute("aria-hidden", "true");
-  document
-    .querySelector(`#save_button${no}`)
-    .setAttribute("aria-hidden", "false");
+  genre.innerHTML =
+    "<input type='text' id='genre_text" + no + "' value='" + genre_data + "'>";
+  year.innerHTML =
+    "<input type='text' id='year_text" + no + "' value='" + year_data + "'>";
+  isbn.innerHTML =
+    "<input type='text' id='isbn_text" + no + "' value='" + isbn_data + "'>";
 }
 
 function add_row() {
@@ -42,13 +43,19 @@ function add_row() {
     "'>" +
     table_len +
     "</td>" +
-    "<td><input type='text' id='new_name" +
+    "<td><input type='text' id='new_title" +
     table_len +
     "'></td>" +
-    "<td><input type='text' id='new_country" +
+    "<td><input type='text' id='new_author" +
     table_len +
     "'></td>" +
-    "<td><input type='text' id='new_age" +
+    "<td><input type='text' id='new_genre" +
+    table_len +
+    "'></td>" +
+    "<td><input type='text' id='new_year" +
+    table_len +
+    "'></td>" +
+    "<td><input type='text' id='new_isbn" +
     table_len +
     "'></td>" +
     "<td><button id='save_button" +
@@ -63,9 +70,11 @@ function add_row() {
 }
 
 function save_row(no) {
-  var name_val = document.getElementById("new_name" + no).value;
-  var country_val = document.getElementById("new_country" + no).value;
-  var age_val = document.getElementById("new_age" + no).value;
+  var title_val = document.getElementById("new_title" + no).value;
+  var author_val = document.getElementById("new_author" + no).value;
+  var genre_val = document.getElementById("new_genre" + no).value;
+  var year_val = document.getElementById("new_year" + no).value;
+  var isbn_val = document.getElementById("new_isbn" + no).value;
 
   document.getElementById("row" + no).innerHTML =
     "<td id='serial_no_row" +
@@ -73,20 +82,30 @@ function save_row(no) {
     "'>" +
     no +
     "</td>" +
-    "<td id='name_row" +
+    "<td id='title_row" +
     no +
     "'>" +
-    name_val +
+    title_val +
     "</td>" +
-    "<td id='country_row" +
+    "<td id='author_row" +
     no +
     "'>" +
-    country_val +
+    author_val +
     "</td>" +
-    "<td id='age_row" +
+    "<td id='genre_row" +
     no +
     "'>" +
-    age_val +
+    genre_val +
+    "</td>" +
+    "<td id='year_row" +
+    no +
+    "'>" +
+    year_val +
+    "</td>" +
+    "<td id='isbn_row" +
+    no +
+    "'>" +
+    isbn_val +
     "</td>" +
     "<td><button id='edit_button" +
     no +
